@@ -79,15 +79,17 @@ Restart SSH:
  **
 
 3. Configure the default firewall for Ubuntu to only allow incoming connections for SSH (port 2200), HTTP (port 80),and NTP (port 123).
- sudo ufw status                  # The UFW should be inactive.
- sudo ufw default deny incoming   # Deny any incoming traffic.
- sudo ufw default allow outgoing  # Enable outgoing traffic.
- sudo ufw allow 2200/tcp          # Allow incoming tcp packets on port 2200.
- sudo ufw allow www               # Allow HTTP traffic in.
- sudo ufw allow 123/udp           # Allow incoming udp packets on port 123.
- sudo ufw deny 22                 # Deny tcp and udp packets on port 53.
- sudo ufw enable.                 # Turn UFW on
- sudo ufw status                  #Check the status of UFW
+  ```
+  $ sudo ufw status                  # The UFW should be inactive.
+  $ sudo ufw default deny incoming   # Deny any incoming traffic.
+  $ sudo ufw default allow outgoing  # Enable outgoing traffic.
+  $ sudo ufw allow 2200/tcp          # Allow incoming tcp packets on port 2200.
+  $ sudo ufw allow www               # Allow HTTP traffic in.
+  $ sudo ufw allow 123/udp           # Allow incoming udp packets on port 123.
+  $ sudo ufw deny 22                 # Deny tcp and udp packets on port 53.
+  $ sudo ufw enable.                 # Turn UFW on
+  $ sudo ufw status                  #Check the status of UFW
+ ```
 
 The output should be like this:
 
@@ -130,25 +132,28 @@ Save and exit.
     ```
   copy the key
 
-  b. Create .ssh folder and authorized_keys file and add the key you generated to it  
+  b. Create .ssh folder and authorized_keys file and add the key you generated to it
+  
     ```
     $ mkdir /home/grader/.ssh
     $ cd /home/grader/.ssh
     $ touch authorized_keys
     $ sudo nano authorized_keys
     ```
-    and paste the key in it
-    save and exis.
+ 
+  and paste the key in it
+  save and exis.
 
   c. Change ownership
     ```
     $ chown grader.grader /home/grader/.ssh
     ```
-    add 'grader' to sudo group
+
+   add 'grader' to sudo group 
     ```
     $ usermod -a G sudo grader
     ```
-    change permissions for .ssh folder and authorized_keys file
+   change permissions for .ssh folder and authorized_keys file
     ```
     $ chmod 0700 /home/grader/.ssh/
     $ chmod 644 authorized_keys
@@ -193,6 +198,7 @@ Save and exit.
     ```
 
   b. Now create a user to create and set up the database. here the name of database catalog with user catalog
+  
     ```
     $ CREATE USER catalog WITH PASSWORD 'catalog';
     $ ALTER USER catalog CREATEDB;
@@ -202,7 +208,9 @@ Save and exit.
     $ GRANT ALL ON SCHEMA public TO catalog;
     $ \q    # Quit the postgrel command line and then exit   
     ```
-  c.use
+ 
+ c.use
+ 
     ```
     $ sudo nano project.py
     $ sudo nano database_setup.py
