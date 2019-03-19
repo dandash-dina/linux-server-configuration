@@ -92,6 +92,7 @@ Restart SSH:
 The output should be like this:
 
  Status: active
+ 
   To          | Action        | From
 ------------- | ------------- | -------------
 2200/tcp      | ALLOW         | Anywhere
