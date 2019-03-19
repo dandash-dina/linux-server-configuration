@@ -3,8 +3,9 @@
 
 ## Table of Contents
 
-* [Project Description](#describe what this project about)
+* [Project Description](#describe what this project about) 
 * [Project Content](#contents)
+* [Project Resources](#resource that help to complete the project)
 
 
 
@@ -332,4 +333,10 @@ Paste this code:
   ```
  7. Launch the Web Application
   Open your browser to http://18.234.74.208.xip.io/
+
+
+
+## Project Resources
+1. Udacity Full Stack Web Developer Nanodegree
+2. Github repos
 
